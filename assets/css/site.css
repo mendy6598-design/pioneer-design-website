@@ -1,0 +1,115 @@
+/* ------------------------------------------------------------------
+   The Pioneer Design — local build additions
+   Only used for the lightbox overlay and a couple of safe resets.
+------------------------------------------------------------------ */
+
+html.pd-lb-open,
+body.pd-lb-open {
+    overflow: hidden;
+}
+
+.pd-lightbox {
+    align-items: center;
+    background: #ffffff;
+    cursor: zoom-out;
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    opacity: 0;
+    padding: 40px;
+    position: fixed;
+    transition: opacity 0.18s ease;
+    visibility: hidden;
+    z-index: 100001;
+}
+
+.pd-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pd-lightbox img {
+    height: auto;
+    max-height: calc(100vh - 80px);
+    max-width: 90vw;
+    object-fit: contain;
+    width: auto;
+}
+
+/* Mirrors the WordPress core lightbox close button (40px, 16px inset). */
+.pd-lightbox__close {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    transition: opacity 0.15s ease;
+    width: 40px;
+    z-index: 2;
+}
+
+.pd-lightbox__close:hover {
+    opacity: 0.6;
+}
+
+.pd-lightbox__close svg {
+    display: block;
+    height: 24px;
+    width: 24px;
+}
+
+body.pd-menu-open {
+    overflow: hidden;
+}
+
+/* Keep the mobile overlay menu on the theme's black/white palette.
+   The selector mirrors (and outranks) the core block-library default that
+   paints the overlay white because this navigation has no background preset. */
+html body .wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay) {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+@media (max-width: 599px) {
+    .wp-block-navigation__responsive-container.is-menu-open {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+/* ------------------------------------------------------------------
+   Header: logo left, navigation centered, contact button right.
+   The logo keeps its full size on wide screens and scales down as the
+   row gets narrower; below 900px the original centered header returns.
+------------------------------------------------------------------- */
+@media (min-width: 900px) {
+    .pd-header-row.is-layout-flex {
+        align-items: center;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    }
+
+    .pd-header-row > .wp-block-spacer {
+        display: none;
+    }
+
+    .pd-header-row > .wp-block-site-logo {
+        justify-self: start;
+    }
+
+    /* The middle cell is what centers the menu in the page. */
+    .pd-header-row > .wp-block-group.is-nowrap {
+        justify-self: center;
+    }
+
+    .pd-header-row > .wp-block-buttons {
+        justify-self: end;
+    }
+}
