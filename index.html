@@ -279,6 +279,8 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 .mp-full-photo a:focus-visible{outline:2px solid #fff;outline-offset:6px}
 @media(max-width:700px){.mp-home.mp-full-photo{padding:22px 6% 42px;min-height:max(620px,100svh)}.mp-full-photo .mp-header{flex-direction:column;align-items:flex-start;gap:12px}.mp-full-photo .mp-brand{flex:0 0 auto!important;width:100%!important;max-width:440px!important}.mp-full-photo .mp-official-logo{max-width:440px!important}.mp-full-photo .mp-header nav{gap:28px;font-size:14px}.mp-full-photo .mp-hero-image{object-position:58% center}.mp-hero-copy{max-width:calc(100% - 32px)}.mp-full-photo h1{font-size:40px;max-width:370px;margin-bottom:26px}.mp-scroll{right:4%;bottom:35px;font-size:30px}.mp-hero-button{padding:14px 20px;font-size:10px}}
 @media(max-height:500px) and (min-width:701px){.mp-home.mp-full-photo{min-height:500px}.mp-hero-copy{padding-top:100px}}
+</style><style id="mp-contact-details-style">
+.mp-contact-details{margin:0;min-width:0}.mp-contact-details>div{padding:18px 0;border-bottom:1px solid #b9bcab}.mp-contact-details>div:first-child{padding-top:0}.mp-contact-details dt{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 8px}.mp-contact-details dd{margin:0;font-size:clamp(17px,2.05vw,28px);line-height:1.35;overflow-wrap:anywhere}.mp-contact-details a{color:inherit;text-decoration:none}.mp-contact-details a:hover{text-decoration:underline;text-underline-offset:4px}.mp-contact-details a:focus-visible{outline:2px solid currentColor;outline-offset:4px}.mp-contact-details a span{font-size:.7em}
 </style></head>
 
 <body class="home blog wp-custom-logo wp-embed-responsive wp-theme-pubadventurer is-block-theme customizer-styles-applied jetpack-reblog-enabled">
@@ -356,26 +358,7 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 <a class="pd-gallery-item mp-unified-item" href="assets/img/b60db3daf8faa917fcbf231ffb0211ada89e42ff.jpg"><img src="assets/img/b60db3daf8faa917fcbf231ffb0211ada89e42ff.jpg" loading="lazy" decoding="async" alt="Interior design by MENDY POLATSECK DESIGN"></a>
 <a class="pd-gallery-item mp-unified-item" href="assets/img/5b96de3e54100a99784aee4c6057a4124f3b91ac.jpg"><img src="assets/img/5b96de3e54100a99784aee4c6057a4124f3b91ac.jpg" loading="lazy" decoding="async" alt="Interior design by MENDY POLATSECK DESIGN"></a>
 <a class="pd-gallery-item mp-unified-item" href="assets/img/419e31136e460f392656ad8f9e6761696791e7bb.jpg"><img src="assets/img/419e31136e460f392656ad8f9e6761696791e7bb.jpg" loading="lazy" decoding="async" alt="Interior design by MENDY POLATSECK DESIGN"></a></div></section>
-<section class="mp-connect" id="contact" aria-labelledby="mp-connect-title"><div class="mp-connect-grid"><div><img class="mp-contact-logo" src="assets/img/logo-dark-transparent.webp" width="2048" height="682" alt="MENDY POLATSECK DESIGN — PIONEER"><h2 id="mp-connect-title">Your project<br>starts here</h2><p class="mp-connect-intro">A new project, a fresh direction, or a simple question—get in touch.</p></div><form id="mp-message-form" class="mp-message-form" action="https://formsubmit.co/mendy@thepioneerdesign.com" method="POST"><input type="hidden" name="_subject" value="New website inquiry — MENDY POLATSECK DESIGN"><input type="hidden" name="_template" value="table"><input type="hidden" name="_url" id="mp-form-url"><input type="hidden" name="_next" id="mp-form-next"><input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true"><label for="mp-name">Name<input id="mp-name" name="name" autocomplete="name" required maxlength="150"></label><label for="mp-email">Email<input id="mp-email" name="email" type="email" autocomplete="email" required maxlength="254"></label><label for="mp-message">Message<textarea id="mp-message" name="message" rows="4" required maxlength="5000"></textarea></label><button type="submit">Send Message <span aria-hidden="true">⟶</span></button></form></div></section>
-<script>
-(function(){
- var form=document.getElementById('mp-message-form');if(!form)return;
- var current=new URL(window.location.href);current.search='';current.hash='';
- document.getElementById('mp-form-url').value=current.href;
- var next=new URL(current.href);next.searchParams.set('message','sent');next.hash='contact';
- document.getElementById('mp-form-next').value=next.href;
- var notice=document.createElement('p');notice.setAttribute('role','status');notice.style.cssText='font-size:15px;line-height:1.6;color:#353c27;margin:0';
- if(new URLSearchParams(window.location.search).get('message')==='sent'){
-  notice.textContent='Thank you. Your message has been submitted.';form.prepend(notice);
-  var clean=new URL(window.location.href);clean.searchParams.delete('message');window.history.replaceState(null,'',clean.href);
- }
- form.addEventListener('submit',function(event){
-  if(!form.checkValidity()){event.preventDefault();form.reportValidity();return;}
-  var button=form.querySelector('button[type="submit"]');button.disabled=true;button.textContent='Sending…';
- });
- window.addEventListener('pageshow',function(){var button=form.querySelector('button[type="submit"]');button.disabled=false;button.innerHTML='Send Message <span aria-hidden="true">⟶</span>';});
-})();
-</script><footer class="mp-footer"><a class="mp-footer-brand" href="index.html"><img class="mp-brand-icon" src="assets/img/mendy-monogram.webp" width="42" height="42" alt=""><img class="mp-official-logo" src="assets/img/logo-dark-transparent.webp" width="2048" height="682" alt="MENDY POLATSECK DESIGN — PIONEER"></a><a href="index.html#contact">Let’s connect <span aria-hidden="true">↗</span></a></footer></div>
+<section class="mp-connect" id="contact" aria-labelledby="mp-connect-title"><div class="mp-connect-grid"><div><h2 id="mp-connect-title">Your project<br>starts here</h2><p class="mp-connect-intro">A new project, a fresh direction, or a simple question—get in touch.</p></div><dl class="mp-contact-details"><div><dt>Email</dt><dd><a href="mailto:mendy@thepioneerdesign.com">mendy@thepioneerdesign.com <span aria-hidden="true">↗</span></a></dd></div><div><dt>Phone</dt><dd><a href="tel:+18457462025">845-746-2025 <span aria-hidden="true">↗</span></a></dd></div><div><dt>Location</dt><dd>Serving New York</dd></div></dl></div></section><footer class="mp-footer"><a class="mp-footer-brand" href="index.html"><img class="mp-brand-icon" src="assets/img/mendy-monogram.webp" width="42" height="42" alt=""><img class="mp-official-logo" src="assets/img/logo-dark-transparent.webp" width="2048" height="682" alt="MENDY POLATSECK DESIGN — PIONEER"></a><a href="index.html#contact">Let’s connect <span aria-hidden="true">↗</span></a></footer></div>
 </div>
 <!-- wpcom_wp_footer -->
 
