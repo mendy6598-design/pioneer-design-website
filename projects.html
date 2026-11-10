@@ -424,6 +424,9 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
    empty.hidden = count !== 0;
    status.textContent = count ? button.textContent + ': ' + count + ' gallery images.' : empty.textContent;
  });
+ const selected = new URLSearchParams(location.search).get('category');
+ const initial = buttons.find(button => button.dataset.filter === selected);
+ if (initial) initial.click();
  const grid = document.querySelector('#mp-project-grid');
  grid.addEventListener('click', event => {
    const link = event.target.closest('.pd-gallery-item');
